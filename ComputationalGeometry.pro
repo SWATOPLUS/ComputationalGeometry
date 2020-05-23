@@ -22,7 +22,8 @@ SOURCES += \
 
 HEADERS += \
     mainwindow.h \
-    task1_1.h
+    task1_1.h \
+    task1_1_rendered.h
 
 FORMS += \
     mainwindow.ui \
