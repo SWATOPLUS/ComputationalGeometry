@@ -76,6 +76,19 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout"/>
   </widget>
+  <widget class="QLabel" name="selectedPointsLabel">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>30</y>
+     <width>211</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Selected points: 0</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

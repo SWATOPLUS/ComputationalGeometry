@@ -11,7 +11,7 @@ Task1_1::Task1_1(QWidget *parent) :
     ui->setupUi(this);
 
     points = new QVector<QPoint>();
-    renderer = new Task1_1_Rendered(points);
+    renderer = new Task1_1_Rendered(points, this);
     renderer->setPointSize(1);
     ui->verticalLayout->addWidget(renderer);
 }
@@ -43,7 +43,7 @@ void Task1_1::on_applyButton_clicked()
         }
     }
 
-    renderer->repaint();
+    repaint();
 }
 
 void Task1_1::on_isBigCircleCheckBox_toggled(bool checked)
@@ -54,5 +54,25 @@ void Task1_1::on_isBigCircleCheckBox_toggled(bool checked)
         renderer->setPointSize(1);
     }
 
-    renderer->repaint();
+    repaint();
+}
+
+void Task1_1::paintEvent(QPaintEvent *event)
+{
+   if (renderer->isRectReady()) {
+       auto rect = renderer->getMainRect();
+       auto counter = 0;
+
+       for (int i = 0; i < points->count(); i++) {
+           auto point = points->at(i);
+
+           if (rect.contains(point)) {
+             counter++;
+           }
+       }
+
+       ui->selectedPointsLabel->setText("Selected points: " + QString::number(counter));
+   }
+
+   QWidget::paintEvent(event);
 }

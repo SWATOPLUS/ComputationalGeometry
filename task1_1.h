@@ -18,7 +18,7 @@ public:
 
 private slots:
     void on_applyButton_clicked();
-
+    void paintEvent(QPaintEvent *event);
     void on_isBigCircleCheckBox_toggled(bool checked);
 
 private:
