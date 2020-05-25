@@ -20,7 +20,7 @@ public:
     }
 
     void mouseMoveEvent(QMouseEvent *event){
-        if ((event->buttons() == Qt::LeftButton) && rectState == 2) {
+        if ((event->buttons() == Qt::LeftButton)) {
             auto newPoint = QPoint(event->x(), event->y());
 
             auto xOffset = newPoint.x() - mousePoint.x();
@@ -93,6 +93,14 @@ public:
 
     QRect getMainRect() {
         return mainRect;
+    }
+
+    QPoint getMainPoint() {
+        if (rectState == 1) {
+            return mainRect.topLeft();
+        }
+
+        return QPoint(-1, -1);
     }
 
     bool isRectReady() {

@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "task1_1_rendered.h"
+#include "pointcounter.h"
 
 namespace Ui {
 class Task1_1;
@@ -25,6 +26,7 @@ private:
     Ui::Task1_1 *ui;
     QVector<QPoint> *points;
     Task1_1_Rendered *renderer;
+    PointCounter *pointCounter;
 };
 
 #endif // TASK1_1_H

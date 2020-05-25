@@ -18,10 +18,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    pointcounter.cpp \
     task1_1.cpp
 
 HEADERS += \
     mainwindow.h \
+    pointcounter.h \
     task1_1.h \
     task1_1_rendered.h
 
